@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState } from "react";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import Button from "@material-ui/core/Button";
 
 function App() {
 	const [catFact, setCatFact] = useState("");
@@ -19,8 +21,14 @@ function App() {
 	return (
 		<div className='App'>
 			<header className='App-header'>
-				<button onClick={factGetter}>Click to get a Fact!</button>
-				<p> "\n" </p>
+				<Button
+					onClick={factGetter}
+					startIcon={<GitHubIcon />}
+					size='medium'
+					variant='contained'>
+					Click to get a Fact!
+				</Button>
+
 				<p className='App-style'>Cat Fact:{catFact}</p>
 			</header>
 		</div>
