@@ -1,0 +1,32 @@
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+.App {
+	text-align: center;
+}
+
+.Test {
+	text-align: left;
+}
+
+.App-header {
+	background-color: #fbb861;
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: red;
+}
+
+.App-style {
+	background-color: #fbb861;
+}
+
+.App-link {
+	color: gray;
+}
