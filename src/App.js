@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import myImage from "./catfactbanner.jpeg";
+import CatBanner from "./catfactbanner.jpeg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Button from "@material-ui/core/Button";
 import "fontsource-roboto";
@@ -8,11 +8,17 @@ import Typography from "@material-ui/core/Typography";
 
 function App() {
 	const [catFact, setCatFact] = useState("");
-	const [counter, setCounter] = useState("");
+	const [state, setState] = useState(true);
+
+	const [counter, setCounter] = useState(0);
 
 	function factGetter() {
-		let counter = 0;
-		counter++;
+		setState(!state);
+		if (state === true) {
+			setCounter(counter + 1);
+		} else {
+			setCounter(counter - 1);
+		}
 		fetch(
 			"https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2"
 		)
@@ -26,7 +32,7 @@ function App() {
 	}
 	return (
 		<div className='App'>
-			<img src={myImage}></img>
+			<img alt='A banner of cats.' src={CatBanner}></img>
 			<header className='App-header'>
 				<Typography variant='h4' color='initial'>
 					Welcome to my Cat-Fact website. Click the button to get as many Cat
